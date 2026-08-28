@@ -1,32 +1,92 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# 📋 Kanban
 
-Currently, two official plugins are available:
+**Sistema de gerenciamento visual de tarefas desenvolvido com React e TypeScript.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Organize suas tarefas de forma simples e intuitiva através de diferentes etapas do fluxo de trabalho.
 
-## React Compiler
+<br>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![React](https://img.shields.io/badge/React-2026-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript)
+![Vite](https://img.shields.io/badge/Vite-7.x-purple?logo=vite)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.x-purple?logo=bootstrap)
 
-## Expanding the Oxlint configuration
+</div>
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+---
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## 🚀 Sobre o projeto
+
+O **Kanban** é uma aplicação desenvolvida para praticar conceitos fundamentais do desenvolvimento com React, como **componentização, props, gerenciamento de estado e renderização de listas**.
+
+A aplicação organiza as tarefas em colunas, permitindo visualizar facilmente o andamento das atividades.
+
+## ✨ Funcionalidades
+
+* 📌 Organização de tarefas por etapas
+* 📝 Título e descrição das tarefas
+* 🧩 Componentes reutilizáveis
+* ⚛️ Gerenciamento de estado com React
+* 📱 Interface responsiva
+
+## 🛠️ Tecnologias
+
+<div align="center">
+
+| Tecnologia    | Utilização                   |
+| ------------- | ---------------------------- |
+| ⚛️ React      | Desenvolvimento da interface |
+| 🔷 TypeScript | Tipagem estática             |
+| ⚡ Vite        | Ambiente de desenvolvimento  |
+| 🎨 Bootstrap  | Estilização da interface     |
+
+</div>
+
+## 📂 Estrutura do projeto
+
+```text
+src/
+├── components/
+│   ├── Card/
+│   ├── Coluna/
+│   └── ...
+├── schemas/
+├── App.tsx
+└── main.tsx
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 💻 Como executar
+
+```bash
+# Clone o repositório
+git clone URL_DO_SEU_REPOSITORIO
+
+# Entre na pasta
+cd nome-do-projeto
+
+# Instale as dependências
+npm install
+
+# Execute o projeto
+npm run dev
+```
+
+## 📸 Preview
+
+<div align="center">
+
+<!-- Coloque aqui uma imagem do seu projeto -->
+
+<img src="LINK_DA_IMAGEM" alt="Preview do Kanban" width="800">
+
+</div>
+
+---
+
+<div align="center">
+
+Desenvolvido com ⚛️ React e 💙 TypeScript
+
+</div>
