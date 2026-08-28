@@ -40,30 +40,13 @@ const initialState: State = [
         id: "pendente",
         titulo: "A fazer",
         cor: "danger",
-        cards: [
-            {
-                id: "1",
-                title: "Criar layout",
-                descricao: "Criar o layout inicial do Kanban"
-            },
-            {
-                id: "2",
-                title: "Criar componentes",
-                descricao: "Separar as colunas em componentes"
-            }
-        ]
+        cards: []
     },
     {
         id: "fazendo",
         titulo: "Fazendo",
         cor: "warning",
-        cards: [
-            {
-                id: "3",
-                title: "Implementar drag",
-                descricao: "Permitir arrastar os cards"
-            }
-        ]
+        cards: []
     },
     {
         id: "feito",
@@ -77,49 +60,48 @@ function reducer(state: State, action: Action): State {
     switch (action.type) {
 
         case "MOVER_CARD": {
-            let cardMovido: DadosCard | undefined;
+            const colunaOrigem = state.find(
+                coluna => coluna.id === action.colunaOrigem
+            );
 
-            const estadoSemCard = state.map(coluna => {
-                if (coluna.id !== action.colunaOrigem) {
-                    return coluna;
-                }
-
-                cardMovido = coluna.cards.find(
-                    card => card.id === action.cardId
-                );
-
-                
-                return {
-                    ...coluna,
-                    cards: coluna.cards.filter(
-                        card => card.id !== action.cardId
-                    )
-                };
-            });
+            const cardMovido = colunaOrigem?.cards.find(
+                card => card.id === action.cardId
+            );
 
             if (!cardMovido) {
                 return state;
             }
 
-            return estadoSemCard.map(coluna =>
-                coluna.id === action.colunaDestino
-                    ? {
+            return state.map(coluna => {
+                if (coluna.id === action.colunaOrigem) {
+                    return {
+                        ...coluna,
+                        cards: coluna.cards.filter(
+                            card => card.id !== action.cardId
+                        )
+                    };
+                }
+
+                if (coluna.id === action.colunaDestino) {
+                    return {
                         ...coluna,
                         cards: [...coluna.cards, cardMovido]
-                    }
-                    : coluna
-            );
+                    };
+                }
+
+                return coluna;
+            });
         }
 
         case "ADICIONAR_CARD":
             return state.map(coluna =>
-        coluna.id === action.colunaId
-            ? {
-                ...coluna,
-                cards: [...coluna.cards, action.card]
-            }
-            : coluna
-    );
+                coluna.id === action.colunaId
+                    ? {
+                        ...coluna,
+                        cards: [...coluna.cards, action.card]
+                    }
+                    : coluna
+            );
 
         case "REMOVER_CARD":
             return state;
@@ -142,7 +124,7 @@ function carregarEstadoInicial(): State {
 export default function MudancaProvider({ children }: dadosProvider) {
     const [state, dispatch] = useReducer(reducer, undefined, carregarEstadoInicial);
 
-        useEffect(() => {
+    useEffect(() => {
         salvarColunas(state);
     }, [state]);
 
