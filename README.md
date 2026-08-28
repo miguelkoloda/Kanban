@@ -79,7 +79,7 @@ npm run dev
 
 <!-- Coloque aqui uma imagem do seu projeto -->
 
-<img src="LINK_DA_IMAGEM" alt="Preview do Kanban" width="800">
+<img src="./public/image.png" alt="Preview do Kanban" width="800">
 
 </div>
 
