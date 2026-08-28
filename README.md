@@ -29,7 +29,6 @@ A aplicação organiza as tarefas em colunas, permitindo visualizar facilmente o
 * 📝 Título e descrição das tarefas
 * 🧩 Componentes reutilizáveis
 * ⚛️ Gerenciamento de estado com React
-* 📱 Interface responsiva
 
 ## 🛠️ Tecnologias
 
