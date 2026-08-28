@@ -61,7 +61,7 @@ src/
 
 ```bash
 # Clone o repositório
-git clone URL_DO_SEU_REPOSITORIO
+git clone https://github.com/miguelkoloda/Kanban.git
 
 # Entre na pasta
 cd nome-do-projeto
